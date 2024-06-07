@@ -1,0 +1,53 @@
+/* Base et init */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    width: 100vw;
+    height: 100%;
+    @include flexAlignCenter;
+    box-sizing: border-box;
+    user-select: none;
+    font-size: 1rem;
+    font-family: $txt-outfit;
+    color: $Dark-Charcoal;
+    background: $Eggshell;
+}
+
+h1, h2 {
+    font-family: $txt-youngSerif;
+    font-weight: 400;
+}
+    
+h2 {
+    color: $Nutmeg;
+}
+
+p, b, ul, li, td {
+    color: $Wenge-Brown;
+}
+
+ul {
+    list-style: disc;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    object-fit: cover;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid $Light-Grey;
+    height: 0;
+    @include marginTop;
+}

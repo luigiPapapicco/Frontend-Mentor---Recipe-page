@@ -1,0 +1,11 @@
+// import utils
+@import "utils/mixins";
+@import "utils/variables";
+
+// normalize 
+@import "base/base";
+@import "base/typography";
+
+
+// import style
+@import "page/style.scss";

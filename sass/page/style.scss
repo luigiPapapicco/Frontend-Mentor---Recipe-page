@@ -1,0 +1,103 @@
+#container {
+    background-color: $White;
+    max-width: 700px;
+    // height: auto;
+    border-radius: 25px;
+    @include padding; 
+    align-self: center;
+
+}
+// header
+header {
+
+    & > img {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    & > h1 {
+        @include marginTop;
+
+    }
+
+    & > p {
+        @include marginAllTitle;
+    }
+}
+
+// main
+#time {
+    background: $Rose-White;
+    border-radius: 15px;
+    padding: 20px 20px;
+    @include marginTop;
+
+    & > h2 {
+        font-family: $txt-outfit;
+        font-size: 18px;
+        font-weight: bold;
+        color: $Dark-Raspberry;
+    }
+
+    & > ul {
+        margin: 15px 30px;
+        
+
+        & > li {
+            @include marginAllTitle;
+
+        }
+    }
+}
+
+#ingredients {
+    @include marginTop;
+    
+    & > ul {
+        margin-left: 25px;
+
+        & > li {
+            @include marginAllTitle;
+
+        }
+    }
+}
+
+#instructions {
+    @include marginTop;
+
+    & > ol {
+        margin-left: 25px;
+
+        & > li {
+            @include marginAllTitle;
+
+        }
+    }
+}
+
+
+#nutrition {
+
+    @include marginTop;
+
+    & > p {
+        @include marginAllTitle;
+    }
+
+    & > table {
+        width: 100%;
+        border-collapse: collapse;
+        
+        & > tbody > tr {
+            
+            border-bottom: 1px solid $Light-Grey;
+        }
+
+        & > tbody > tr > td {
+            padding: 10px 25px;
+        }
+    }
+        
+
+}
