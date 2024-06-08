@@ -1,31 +1,61 @@
 #container {
     background-color: $White;
-    max-width: 700px;
-    // height: auto;
+    width: 768px;
+    // width: 50%;
     border-radius: 25px;
     @include padding; 
     align-self: center;
+    
+    @media (max-width: 768px) {
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
 
+    @media (max-width: 375px) {
+        width: 100%;
+        height: 100%;
+
+        padding: 0;
+    }
 }
+
 // header
 header {
 
     & > img {
         width: 100%;
         border-radius: 15px;
+
+        @media (max-width: 375px) {
+            border-radius: 0;
+        }
     }
 
     & > h1 {
         @include marginTop;
 
+        @media (max-width:375px) {
+            margin: 0 35px;
+        }
     }
 
     & > p {
         @include marginAllTitle;
+
+        @media (max-width:375px) {
+            margin: 0 35px; 
+        }
     }
 }
 
 // main
+main {
+    @media (max-width: 375px) {
+        margin: 0 35px; 
+    }
+}
+
 #time {
     background: $Rose-White;
     border-radius: 15px;
@@ -45,7 +75,18 @@ header {
 
         & > li {
             @include marginAllTitle;
+            list-style: none;
+            position: relative;
+        }
 
+        & > li::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            left: -22px;
+            top: 8px;
+            background: hsl(332, 51%, 32%);
         }
     }
 }
@@ -58,7 +99,18 @@ header {
 
         & > li {
             @include marginAllTitle;
-
+            list-style: none;
+            position: relative;
+        }
+        
+        & > li::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            top: 9px;
+            left: -19px;
+            background-color: $Nutmeg;
         }
     }
 }
@@ -68,10 +120,22 @@ header {
 
     & > ol {
         margin-left: 25px;
+        counter-reset: item;
+        list-style: none;
+
 
         & > li {
             @include marginAllTitle;
+            counter-increment: item;
+            position: relative;
+        }
 
+        & > li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: -19px;
+            color: $Nutmeg;
+            font-weight: bold;
         }
     }
 }
@@ -80,6 +144,7 @@ header {
 #nutrition {
 
     @include marginTop;
+
 
     & > p {
         @include marginAllTitle;
@@ -90,14 +155,20 @@ header {
         border-collapse: collapse;
         
         & > tbody > tr {
-            
             border-bottom: 1px solid $Light-Grey;
+
+            &:nth-child(4) {
+                border-bottom: none;
+            }
         }
 
         & > tbody > tr > td {
             padding: 10px 25px;
+        
+            &:nth-child(2) {
+                color: $Nutmeg;
+                font-weight: bold;
+            }
         }
     }
-        
-
 }
